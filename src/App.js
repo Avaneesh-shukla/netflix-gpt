@@ -1,8 +1,9 @@
+import Body from "./components/Body";
 
 function App() {
   return (
-    <div className="test-3xl font-bold bg-green-500">
-      Namaste Netflix-GPT
+    <div>
+      <Body/>
     </div>
   );
 }
