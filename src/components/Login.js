@@ -60,12 +60,15 @@ const Login = () => {
 
 
   return (
-    <div>
-        <Header/>
-        <div className='absolute'>
+    <div className='relative'>
+        <div className='relative z-20'>
+            <Header/>
+        </div>
+        
+        <div className='absolute top-0'>
             <img src={header_img}/>
         </div>
-        <form onSubmit={(e)=>e.preventDefault()} className='absolute bg-black bg-opacity-70 w-3/12 mx-auto left-0 right-0 my-36 p-10 test-white'>
+        <form onSubmit={(e)=>e.preventDefault()} className='absolute bg-black bg-opacity-70 w-3/12 mx-auto left-0 right-0 my-16 p-10 test-white'>
             <h3 className='text-white text-3xl'>{signinToggle?'Sign In':'Sign Up'}</h3>
             {
                 !signinToggle&&<input type='text' placeholder='Full Name' className='w-full p-2 my-4 bg-slate-700'/>

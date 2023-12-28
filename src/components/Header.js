@@ -1,5 +1,5 @@
 import React, { useEffect } from 'react'
-import { netflix_logo } from '../utils/constants'
+import { header_img, netflix_logo } from '../utils/constants'
 import { useNavigate } from 'react-router-dom';
 import { auth } from '../utils/UserAuth';
 import { onAuthStateChanged, signOut } from 'firebase/auth';
@@ -46,6 +46,7 @@ const Header = () => {
       <button className=' text-white rounded-lg h-2 p-2 my-4' onClick={handleSignOut}>
         LogOut
       </button>
+      
     </div>
   )
 }
