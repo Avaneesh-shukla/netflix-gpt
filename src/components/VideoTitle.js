@@ -5,7 +5,7 @@ import { useSelector } from 'react-redux'
 const VideoTitle = () => {
     useTitle()
     const title=useSelector((store)=>store.movie)
-    console.log(title.trailer);
+    // console.log(title.trailer);
     const name=title.trailer.title
     const desc=title.trailer.overview
   return (

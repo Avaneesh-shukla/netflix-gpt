@@ -1,28 +1,20 @@
-import React from 'react';
-import Header from './Header';
-import useNowPlayingMovies from '../utils/useNowPlayingMovies';
-import VideoTitle from './VideoTitle';
-import VideoBg from './VideoBg';
+import React from 'react'
+import PrimaryComponent from './PrimaryComponent'
+import useMovieCategories from '../utils/useMovieCategories'
+import SecondaryComponent from './SecondaryComponent'
 
 const Browse = () => {
-  useNowPlayingMovies();
-
+  useMovieCategories()
   return (
-    <div className='relative'>
-      {/* Header */}
-      <div className='absolute z-30 top-0 left-0 right-0'>
-        <Header />
+    <div>
+      <div>
+        <PrimaryComponent/>
       </div>
-
-      {/* VideoTitle and VideoBg */}
-      <div className='absolute z-20 flex flex-col text-white bg-gradient-to-r from-black w-screen h-screen opacity-70'>
-        <VideoTitle />
-      </div>
-      <div className='absolute top-0 left-0 right-0'>
-        <VideoBg />
+      <div >
+        <SecondaryComponent/>
       </div>
     </div>
-  );
-};
+  )
+}
 
-export default Browse;
+export default Browse
