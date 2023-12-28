@@ -41,7 +41,7 @@ const Header = () => {
 
 
   return (
-    <div className='w-screen bg-gradient-to-b from-black flex justify-between'>
+    <div className='w-full bg-gradient-to-b from-black flex justify-between'>
       <img className='w-56 py-4 px-4 ' src={netflix_logo}/>
       <button className=' text-white rounded-lg h-2 p-2 my-4' onClick={handleSignOut}>
         LogOut

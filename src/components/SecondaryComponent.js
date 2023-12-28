@@ -15,27 +15,34 @@ const SecondaryComponent = () => {
     console.log(nowPlaying,topRated,popular,upcoming);
   if(!nowPlaying || !popular || !topRated || !upcoming) return
   return (
-    <div className=' text-white bg-black'>
-      <h4 className='px-3 py-1'>Popular</h4>
-      <div className="flex overflow-x-auto p-2">
-      {popular.map((data)=><Popular key={data.id} poster={data.poster_path}/>)}
-      </div>
+    <div className='bg-black'>
+        <div className='relative -m-32 z-40 mx-1'>
+            <h4 className='px-3 py-1 text-white text-2xl'>Popular</h4>
+            <div className="flex overflow-x-auto p-2">
+            {popular.map((data)=><Popular key={data.id} poster={data.poster_path}/>)}
+            </div>
+        </div>
 
-      <h4 className='px-3 py-1'>Upcoming</h4>
-      <div className="flex overflow-x-auto p-2">
-      {upcoming.map((data)=><Upcoming key={data.id} poster={data.poster_path}/>)}
-      </div>
+        <div className='mt-32 text-white'>
+          
 
-      <h4 className='px-3 py-1'>TopRated</h4>
-      <div className="flex overflow-x-auto p-2">
-      {topRated.map((data)=><TopRated key={data.id} poster={data.poster_path}/>)}
-      </div>
+          <h4 className='px-3 py-1 text-2xl'>Upcoming</h4>
+          <div className="flex overflow-x-auto p-2">
+          {upcoming.map((data)=><Upcoming key={data.id} poster={data.poster_path}/>)}
+          </div>
 
-      <h4 className='px-3 py-1'>Now Playing</h4>
-      <div className="flex overflow-x-auto p-2">
-      {nowPlaying.map((data)=><NowPlaying key={data.id} poster={data.poster_path}/>)}
-      </div>
+          <h4 className='px-3 py-1 text-2xl'>TopRated</h4>
+          <div className="flex overflow-x-auto p-2">
+          {topRated.map((data)=><TopRated key={data.id} poster={data.poster_path}/>)}
+          </div>
+
+          <h4 className='px-3 py-1 text-2xl'>Now Playing</h4>
+          <div className="flex overflow-x-auto p-2">
+          {nowPlaying.map((data)=><NowPlaying key={data.id} poster={data.poster_path}/>)}
+          </div>
+        </div>
     </div>
+    
     
   )
 }

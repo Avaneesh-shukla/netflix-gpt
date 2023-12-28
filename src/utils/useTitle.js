@@ -6,7 +6,7 @@ import { options, trailer_url } from "./constants";
 const useTitle = () => {
   const dispatch = useDispatch();
   const movies = useSelector((store) => store.movie);
-  const url_t=trailer_url+"695721/videos"
+  const url_t=trailer_url+"901362/videos"
   const getVideo= async ()=>{
     const data = await fetch(url_t,options)
     const json = await data.json()
@@ -22,8 +22,8 @@ const useTitle = () => {
       // console.log(movies.currentMovies[0], movies.currentMovies[0].overview);
 
       const titlePayload = {
-        title: movies.currentMovies[0].title,
-        overview: movies.currentMovies[0].overview,
+        title: movies.currentMovies[11].title,
+        overview: movies.currentMovies[11].overview,
       
       }
       // const trailer=movies?.currentMovies.filter((tra)=>);

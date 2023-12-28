@@ -9,7 +9,7 @@ const VideoTitle = () => {
     const name=title.trailer.title
     const desc=title.trailer.overview
   return (
-    <div className='w-4/12 text-left mt-64 mx-12'>
+    <div className='w-4/12 text-left mt-56 mx-32'>
         <h3 className='font-bold text-3xl'>{name}</h3>
         <h4 className='my-4'>{desc}</h4>
     </div>
