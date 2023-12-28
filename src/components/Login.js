@@ -6,8 +6,10 @@ import { createUserWithEmailAndPassword, signInWithEmailAndPassword } from "fire
 import { auth } from '../utils/UserAuth';
 import { useDispatch } from 'react-redux';
 import { addUser } from '../utils/UserSlice';
+import { useNavigate } from 'react-router-dom';
 
 const Login = () => {
+    const navigate=useNavigate()
     const [signinToggle,setSigninToggle]=useState(true)
     const [errorMessage,seterrorMessage]=useState(null)
     const dispatch=useDispatch()
@@ -26,8 +28,9 @@ const Login = () => {
             .then((userCredential) => {
                 // Signed up 
                 const user = userCredential.user;
+                
                 // ...
-                console.log(user);
+                // console.log(user)
             })
             .catch((error) => {
                 const errorCode = error.code;
@@ -43,8 +46,9 @@ const Login = () => {
                 // Signed in 
                 const user = userCredential.user;
                 dispatch(addUser({name:user.email}))
+                
                 // ...
-                console.log(user);
+                // console.log(user);
                 })
                 .catch((error) => {
                 const errorCode = error.code;
