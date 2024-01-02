@@ -45,12 +45,13 @@ const handleGPT =
   ()=>{setGpt(!gpt)
     dispatch(toggleGPT())
 }
+  const user = useSelector((store)=>store.user)
   return (
     <div className='w-full bg-gradient-to-b from-black flex justify-between'>
       <img className='w-56 py-4 px-4 ' src={netflix_logo}/>
       <div >
-        <button className=' text-white bg-purple-800 mt-4 px-4 py-2 rounded-xl mx-4'
-        onClick={handleGPT}>{isGpt?"Home":"GPT"}</button>
+        {user && <button className=' text-white bg-purple-800 mt-4 px-4 py-2 rounded-xl mx-4'
+        onClick={handleGPT}>{isGpt?"Go to Home":"GPT"}</button>}
         <button className=' text-white rounded-lg p-2 mt-4 bg-red-800' onClick={handleSignOut}>
           LogOut
         </button>
