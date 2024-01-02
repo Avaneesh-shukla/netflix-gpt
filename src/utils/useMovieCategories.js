@@ -12,7 +12,7 @@ const useMovieCategories = ()=> {
     const getNowPlaying = async ()=>{
         const data = await fetch(nowPlayingURL,options)
         const json = await data.json()
-        console.log("now-Playing - ",json.results);
+        // console.log("now-Playing - ",json.results);
         disaptch(addNowPlaying(json.results))
     }
 
@@ -20,7 +20,7 @@ const useMovieCategories = ()=> {
     const getTopRated = async ()=>{
         const data = await fetch(TopRatedURL,options)
         const json = await data.json()
-        console.log("Toprated - ",json.results);
+        // console.log("Toprated - ",json.results);
         disaptch(addTopRated(json.results))
     }
 
@@ -28,7 +28,7 @@ const useMovieCategories = ()=> {
     const getPopular = async ()=>{
         const data = await fetch(PopularURL,options)
         const json = await data.json()
-        console.log("Popular - ",json.results);
+        // console.log("Popular - ",json.results);
         disaptch(addPopular(json.results))
     }
 
@@ -36,7 +36,7 @@ const useMovieCategories = ()=> {
     const getUpcoming = async ()=>{
         const data = await fetch(UpcomingURL,options)
         const json = await data.json()
-        console.log("Upcoming - ",json.results);
+        // console.log("Upcoming - ",json.results);
         disaptch(addUpcoming(json.results))
     }
 

@@ -22,4 +22,6 @@ export const PopularURL ="https://api.themoviedb.org/3/movie/popular";
 
 export const CATEGORY_IMAGE="https://image.tmdb.org/t/p/w500";
 
+export const Search_URL = "https://api.themoviedb.org/3/search/movie?query=";
+
 

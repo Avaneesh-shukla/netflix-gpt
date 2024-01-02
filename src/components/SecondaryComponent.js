@@ -12,7 +12,7 @@ const SecondaryComponent = () => {
     const popular = useSelector((store)=>store.movie.popular)
     const upcoming = useSelector((store)=>store.movie.upcoming)
 
-    console.log(nowPlaying,topRated,popular,upcoming);
+    // console.log(nowPlaying,topRated,popular,upcoming);
   if(!nowPlaying || !popular || !topRated || !upcoming) return
   return (
     <div className='bg-black'>

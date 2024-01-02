@@ -1,10 +1,11 @@
-import React, { useEffect } from 'react'
+import React, { useEffect, useState } from 'react'
 import { header_img, netflix_logo } from '../utils/constants'
 import { useNavigate } from 'react-router-dom';
 import { auth } from '../utils/UserAuth';
 import { onAuthStateChanged, signOut } from 'firebase/auth';
-import { useDispatch } from 'react-redux';
+import { useDispatch, useSelector } from 'react-redux';
 import { addUser, removeUser } from '../utils/UserSlice';
+import { toggleGPT } from '../utils/GPTSlice';
 // import useTitle from '../utils/useTitle';
 const Header = () => {
   const navigate = useNavigate();
@@ -38,14 +39,23 @@ const Header = () => {
     });
     
   };
-
-
+  const {isGpt} = useSelector((store)=>store.gpt)
+const [gpt,setGpt]=useState(false)
+const handleGPT = 
+  ()=>{setGpt(!gpt)
+    dispatch(toggleGPT())
+}
   return (
     <div className='w-full bg-gradient-to-b from-black flex justify-between'>
       <img className='w-56 py-4 px-4 ' src={netflix_logo}/>
-      <button className=' text-white rounded-lg h-2 p-2 my-4' onClick={handleSignOut}>
-        LogOut
-      </button>
+      <div >
+        <button className=' text-white bg-purple-800 mt-4 px-4 py-2 rounded-xl mx-4'
+        onClick={handleGPT}>{isGpt?"Home":"GPT"}</button>
+        <button className=' text-white rounded-lg p-2 mt-4 bg-red-800' onClick={handleSignOut}>
+          LogOut
+        </button>
+      </div>
+      
       
     </div>
   )
